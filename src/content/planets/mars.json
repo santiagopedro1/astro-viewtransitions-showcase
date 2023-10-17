@@ -1,0 +1,16 @@
+{
+    "name": "Mars",
+    "image": "/images/mars.png",
+    "description": "Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was billions of years ago wetter and warmer, with a thicker atmosphere.",
+    "details": [
+        {
+            "length of a year": 687
+        },
+        {
+            "planet type": "Terrestrial"
+        },
+        {
+            "distance to sun": 1.52
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { type CollectionEntry, getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+	const planets = await getCollection('planets')
+	return planets.map((planet) => ({
+		params: { planet: planet.id },
+		props: planet
+	}))
+}
+type Props = CollectionEntry<'planets'>
+
+const { id, data: planet } = Astro.props
+
+const [detailsName, detailsValue] = planet.details.reduce(
+	(acc: [string[], number[]], detail) => {
+		const [key, value] = Object.entries(detail)[0]
+		acc[0].push(key)
+		acc[1].push(value)
+		return acc
+	},
+	[[], []]
+)
+---
+
+<Layout title={planet.name}>
+	<header class="grid grid-cols-3 p-10">
+		<a
+			href="/"
+			class="flex w-fit items-center gap-1 p-2 text-xl"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="w-7"
+				><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+			>
+			 Back
+		</a>
+		<h1
+			class="w-fit place-self-center text-2xl"
+			transition:name={`${id}-name`}
+		>
+			{planet.name}
+		</h1>
+	</header>
+	<main class="grid place-items-center">
+		<div class="grid grid-cols-[50ch_1fr] place-items-center">
+			<div class="flex flex-col gap-6">
+				<p>{planet.description}</p>
+				<table class="min-w-full text-center text-sm font-light">
+					<thead
+						class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900"
+					>
+						<tr>
+							{
+								detailsName.map((name) => (
+									<th
+										scope="col"
+										class="px-6 py-4 first-letter:capitalize"
+										transition:name={`${id}-${name}`}
+									>
+										{name}
+									</th>
+								))
+							}
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b dark:border-neutral-500">
+							{detailsValue.map((value) => <td class="px-6 py-4">{value}</td>)}
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<img
+				src={planet.image}
+				alt={`An image of ${planet.name}`}
+				transition:name={`${id}-image`}
+				class="scale-140 -z-10"
+			/>
+		</div>
+	</main>
+</Layout>

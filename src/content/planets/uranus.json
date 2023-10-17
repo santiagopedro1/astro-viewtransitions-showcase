@@ -1,0 +1,16 @@
+{
+    "name": "Uranus",
+    "image": "/images/uranus.png",
+    "description": "Uranus, seventh planet from the Sun, rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.",
+    "details": [
+        {
+            "length of a year": 30687
+        },
+        {
+            "planet type": "Ice giant"
+        },
+        {
+            "distance to sun": 19.18
+        }
+    ]
+}

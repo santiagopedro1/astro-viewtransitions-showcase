@@ -1,0 +1,16 @@
+{
+    "name": "Saturn",
+    "image": "/images/saturn.png",
+    "description": "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn's.",
+    "details": [
+        {
+            "length of a year": 10759
+        },
+        {
+            "planet type": "Gas giant"
+        },
+        {
+            "distance to sun": 9.58
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Mercury",
+    "image": "/images/mercury.png",
+    "description": "From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as 11 times brighter.",
+    "details": [
+        {
+            "length of a year": 88
+        },
+        {
+            "planet type": "Terrestrial"
+        },
+        {
+            "distance to sun": 0.39
+        }
+    ]
+}

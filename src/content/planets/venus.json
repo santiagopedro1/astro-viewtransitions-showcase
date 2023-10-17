@@ -1,0 +1,16 @@
+{
+    "name": "Venus",
+    "image": "/images/venus.png",
+    "description": "Similar in structure and size to Earth, Venus's thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.",
+    "details": [
+        {
+            "length of a year": 225
+        },
+        {
+            "planet type": "Terrestrial"
+        },
+        {
+            "distance to sun": 0.72
+        }
+    ]
+}

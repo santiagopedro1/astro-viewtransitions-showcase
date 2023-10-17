@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+const planets = (await getCollection('planets')).sort((a, b) => {
+	const aDist = Object.values(a.data.details[2])[0]
+	const bDist = Object.values(b.data.details[2])[0]
+
+	return aDist - bDist
+})
+---
+
+<Layout title="Planets more fuck">
+	<header class="flex justify-center">
+		<h1 class="py-8 text-3xl font-black">TOP 8 PLANETS MORE FUCK</h1>
+	</header>
+	<main class="mx-auto max-w-5xl">
+		<div class="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-16">
+			{
+				planets.map((planet) => (
+					<a href={`/planets/${planet.id}`}>
+						<img
+							src={planet.data.image}
+							alt={`${planet.data.name}`}
+							class="w-72 select-none opacity-80 transition ease-in hover:opacity-100"
+							transition:name={`${planet.id}-image`}
+						/>
+						<h2
+							class="w-fit text-center text-xl font-bold"
+							transition:name={`${planet.id}-name`}
+						>
+							{planet.data.name}
+						</h2>
+					</a>
+				))
+			}
+		</div>
+	</main>
+</Layout>

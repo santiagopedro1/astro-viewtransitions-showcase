@@ -1,0 +1,16 @@
+{
+    "name": "Jupiter",
+    "image": "/images/jupiter.png",
+    "description": "Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red Spot is a centuries-old storm bigger than Earth.",
+    "details": [
+        {
+            "length of a year": 4333
+        },
+        {
+            "planet type": "Gas giant"
+        },
+        {
+            "distance to sun": 5.2
+        }
+    ]
+}
